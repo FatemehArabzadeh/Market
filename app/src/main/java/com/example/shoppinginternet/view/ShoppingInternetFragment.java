@@ -67,6 +67,9 @@ public class ShoppingInternetFragment extends Fragment {
         viewModel.getProductListNew();
         viewModel.getProductListPopular();
         viewModel.getProductListRate();
+for (int i=0;i<10;i++){
+    mItems.add(null);
+}
 
        /* FlickrTask flickrTask=new FlickrTask();
          flickrTask.execute();*/
@@ -162,18 +165,21 @@ public class ShoppingInternetFragment extends Fragment {
        LinearLayoutManager layoutManager=new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);
        layoutManager.setReverseLayout(true);
         mRecyclerViewNew.setLayoutManager(layoutManager);
+        setupAdapterNew(mItems);
     }
     private void initUIRate(View view) {
         mRecyclerViewRate = view.findViewById(R.id.recycler_view_photo_Shopping_Rate);
         LinearLayoutManager layoutManager=new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);
         layoutManager.setReverseLayout(true);
         mRecyclerViewRate.setLayoutManager(layoutManager);
+        setupAdapterRate(mItems);
     }
     private void initUIPopular(View view) {
         mRecyclerViewPopular = view.findViewById(R.id.recycler_view_photo_Shopping_Popular);
         LinearLayoutManager layoutManager=new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);
         layoutManager.setReverseLayout(true);
         mRecyclerViewPopular.setLayoutManager(layoutManager);
+        setupAdapterPopular(mItems);
     }
 
 

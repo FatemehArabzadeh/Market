@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.shoppinginternet.R;
 import com.example.shoppinginternet.model.Product;
 import com.squareup.picasso.Picasso;
@@ -50,7 +51,7 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoHolder>
     }
 
     public class PhotoHolder extends RecyclerView.ViewHolder {
-
+private LottieAnimationView lottieAnimationView;
         private ImageView mPhoto;
         private Product mProduct;
         private TextView mTextView;
@@ -59,9 +60,10 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoHolder>
         public PhotoHolder(@NonNull View itemView) {
             super(itemView);
 
-            mPhoto = itemView.findViewById(R.id.image_view_photo);
+          //  mPhoto = itemView.findViewById(R.id.image_view_photo);
             mTextView=itemView.findViewById(R.id.textView);
             mTextView2=itemView.findViewById(R.id.textView2);
+            lottieAnimationView=itemView.findViewById(R.id.lottieAnimationView2);
         }
 
         public void bindResponse(Product  mProductt) {
@@ -71,14 +73,23 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoHolder>
            Drawable drawable= mContext.getResources().getDrawable(R.drawable.ax2);
 
            mPhoto.setImageDrawable(drawable);*/
-
+lottieAnimationView.playAnimation();
             mProduct = mProductt;
-mTextView.setText(mProduct.getName());
+            mTextView.setVisibility(View.INVISIBLE);
+            mTextView2.setVisibility(View.INVISIBLE);
+            if (mProduct!=null){
+                mTextView.setVisibility(View.VISIBLE);
+                mTextView2.setVisibility(View.VISIBLE);
+
+                mTextView.setText(mProduct.getName());
 mTextView2.setText(mProduct.getPrice());
             Picasso.with(mContext)
+
                     .load(mProduct.getImages().get(0).getSrc())
-                    .placeholder(R.drawable.ax2)
-                    .into(mPhoto);
+                    .error(R.mipmap.ic_android_foreground) // will be displayed if the image cannot be loaded
+                    .noFade()
+                    .into(lottieAnimationView);}
+
 
 
         }

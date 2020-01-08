@@ -10,7 +10,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp">
 
-        <ImageView
+        <!--<ImageView
 
             android:id="@+id/image_view_photo"
             android:layout_width="100dp"
@@ -19,9 +19,22 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars[0]" />
+            tools:srcCompat="@tools:sample/avatars[0]" />-->
 
+        <com.airbnb.lottie.LottieAnimationView
 
+            android:id="@+id/lottieAnimationView2"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="lf30_editor_Vv5hIa.json"
+            app:lottie_loop="true"
+            app:lottie_progress="@android:integer/config_shortAnimTime"
+            />
 
 
         <TextView
@@ -29,14 +42,16 @@
             android:maxLines="1"
             android:ellipsize="end"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/image_view_photo"
+            app:layout_constraintTop_toBottomOf="@id/lottieAnimationView2"
             app:layout_constraintBottom_toTopOf="@id/textView2"
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
             tools:layout_editor_absoluteX="46dp"
-            tools:layout_editor_absoluteY="115dp" />
+            tools:layout_editor_absoluteY="115dp"
+            android:padding="5dp"
+            android:fontFamily="@font/yekan"/>
         <TextView
 
             android:id="@+id/textView2"
@@ -48,7 +63,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textView"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:padding="10dp"
+            android:fontFamily="@font/yekan"
+            />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

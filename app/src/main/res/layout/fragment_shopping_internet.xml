@@ -14,7 +14,9 @@
     <com.daimajia.slider.library.SliderLayout
         android:id="@+id/slider"
         android:layout_width="match_parent"
-        android:layout_height="200dp" >
+        android:layout_height="200dp"
+        android:padding="5dp"
+        android:fadingEdge="horizontal">
 
     </com.daimajia.slider.library.SliderLayout>
 
@@ -31,7 +33,9 @@
         android:layout_height="30dp"
         android:layout_gravity="right"
         android:text="جدیدترین محصولات "
-        android:textColor="#F10606">
+        android:fontFamily="@font/yekan_bold"
+        android:textColor="#F10606"
+       android:padding="5dp">
 
     </TextView>
     <androidx.recyclerview.widget.RecyclerView
@@ -51,7 +55,9 @@
         android:layout_height="30dp"
         android:layout_gravity="right"
         android:textColor="#F10606"
-        android:text="پربازدیدترین محصولات ">
+        android:text="پربازدیدترین محصولات "
+        android:fontFamily="@font/yekan_bold"
+        android:padding="5dp">
 
     </TextView>
 
@@ -68,7 +74,9 @@
         android:layout_height="30dp"
         android:layout_gravity="right"
         android:textColor="#F10606"
-        android:text="بیشترین امتیاز محصولات ">
+        android:text="بیشترین امتیاز محصولات "
+        android:fontFamily="@font/yekan_bold"
+        android:padding="5dp">
    </TextView>
     <androidx.recyclerview.widget.RecyclerView
 
